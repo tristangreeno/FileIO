@@ -16,11 +16,13 @@ public class ReadWriteFile {
     public static void enterBook() throws IOException {
         BookInfo bookInfo = new BookInfo();
 
-        if(bookInfo.author == null) bookInfo.setAuthor();
-        if(bookInfo.dateOfPublication == null) bookInfo.setDateOfPublication();
-        if(bookInfo.genre == null) bookInfo.setGenre();
-        if(bookInfo.publisher == null) bookInfo.setPublisher();
-        if(bookInfo.title == null) bookInfo.setTitle();
+        if(bookInfo.getAuthor() == null) {
+            bookInfo.enterAuthor();
+            bookInfo.enterDate();
+            bookInfo.enterGenre();
+            bookInfo.enterPublisher();
+            bookInfo.enterTitle();
+        }
 
         JsonSerializer serializer = new JsonSerializer();
         String bookJson = serializer.include("*").serialize(bookInfo);

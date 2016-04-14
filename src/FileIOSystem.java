@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -22,8 +21,8 @@ public class FileIOSystem {
 
             if (bookInfo != null) {
                     System.out.printf("The book %s, written by %s, was published by %s on %s for the %s genre.",
-                            bookInfo.title, bookInfo.author, bookInfo.publisher,
-                            bookInfo.dateOfPublication, bookInfo.genre);
+                            bookInfo.getTitle(), bookInfo.getAuthor(), bookInfo.getPublisher(),
+                            bookInfo.getDateOfPublication(), bookInfo.getGenre());
                 }
 
             else System.out.println("No information was found.");
